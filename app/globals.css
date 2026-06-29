@@ -83,6 +83,48 @@
   --purple-accent: oklch(0.60 0.22 295);
 }
 
+/* Light mode */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Light backgrounds */
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.15 0 0);
+
+  /* Light card */
+  --card: oklch(0.96 0 0);
+  --card-foreground: oklch(0.15 0 0);
+
+  --popover: oklch(0.96 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+
+  /* Primary: deep blue for light mode */
+  --primary: oklch(0.35 0.15 250);
+  --primary-foreground: oklch(0.98 0 0);
+
+  /* Secondary: light gray */
+  --secondary: oklch(0.88 0 0);
+  --secondary-foreground: oklch(0.20 0 0);
+
+  --muted: oklch(0.88 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+
+  --accent: oklch(0.88 0 0);
+  --accent-foreground: oklch(0.20 0 0);
+
+  --destructive: oklch(0.65 0.22 27);
+
+  /* Light borders */
+  --border: oklch(0 0 0 / 12%);
+  --input: oklch(0 0 0 / 8%);
+  --ring: oklch(0.6 0.18 250);
+
+  /* Brand accents for light mode */
+  --electric: oklch(0.60 0.22 255);
+  --gold: oklch(0.75 0.14 88);
+  --purple-accent: oklch(0.55 0.22 295);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

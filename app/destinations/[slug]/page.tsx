@@ -17,7 +17,7 @@ import {
   Shield,
   ChevronRight,
 } from "lucide-react"
-import { Navbar } from "@/components/layout/navbar"
+
 import { Footer } from "@/components/layout/footer"
 import { useLocale } from "@/hooks/use-locale"
 import { destinations } from "@/data/destinations"
@@ -84,7 +84,6 @@ export default function DestinationDetailPage({
 
   return (
     <>
-      <Navbar />
       <main className="pt-20 min-h-screen">
         {/* Hero image banner */}
         <section className="relative h-[55vh] min-h-[380px] max-h-[600px] overflow-hidden">

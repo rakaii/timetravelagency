@@ -4,7 +4,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Brain, Globe, User, BookOpen, Plane, Shield, ChevronRight } from "lucide-react"
-import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { useLocale } from "@/hooks/use-locale"
 
@@ -59,7 +58,6 @@ export default function AboutPage() {
 
   return (
     <>
-      <Navbar />
       <main className="pt-20">
         {/* Hero */}
         <section className="relative py-20 lg:py-28 overflow-hidden">

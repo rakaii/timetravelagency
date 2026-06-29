@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/hero"
 import { About } from "@/components/sections/about"
 import { FeaturedDestinations } from "@/components/sections/featured-destinations"
 import { HowItWorks } from "@/components/sections/how-it-works"
+import { VideoShowcase } from "@/components/sections/video-showcase"
 import { AIPreview } from "@/components/sections/ai-preview"
 import { Testimonials } from "@/components/sections/testimonials"
 import { Quiz } from "@/components/sections/quiz"
@@ -15,6 +16,7 @@ export default function HomePage() {
         <About />
         <FeaturedDestinations />
         <HowItWorks />
+        <VideoShowcase />
         <AIPreview />
         <Testimonials />
         <Quiz />

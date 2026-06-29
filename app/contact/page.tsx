@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Mail, Phone, Clock, ChevronRight, CheckCircle } from "lucide-react"
-import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { useLocale } from "@/hooks/use-locale"
 import { destinations } from "@/data/destinations"
@@ -42,7 +41,6 @@ export default function ContactPage() {
 
   return (
     <>
-      <Navbar />
       <main className="pt-20">
         {/* Hero */}
         <section className="relative py-16 lg:py-20 overflow-hidden">

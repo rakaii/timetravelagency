@@ -3,7 +3,6 @@
 import { useState, useMemo } from "react"
 import { motion } from "framer-motion"
 import { Search } from "lucide-react"
-import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { DestinationCard } from "@/components/ui/destination-card"
 import { useLocale } from "@/hooks/use-locale"
@@ -50,7 +49,6 @@ export default function DestinationsPage() {
 
   return (
     <>
-      <Navbar />
       <main className="pt-20">
         {/* Header */}
         <section className="relative py-16 lg:py-20 overflow-hidden">

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { LocaleProvider } from "@/hooks/use-locale"
 import { ThemeProvider } from "@/hooks/use-theme"
+import { Navbar } from "@/components/layout/navbar"
 import { Chatbot } from "@/components/ui/chatbot"
 
 const inter = Inter({
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ThemeProvider>
           <LocaleProvider>
+            <Navbar />
             {children}
             <Chatbot />
           </LocaleProvider>

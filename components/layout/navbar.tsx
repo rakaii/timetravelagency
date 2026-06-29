@@ -21,10 +21,15 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { t, locale, setLocale } = useLocale()
   const { theme, toggleTheme } = useTheme()
   const pathname = usePathname()
   const router = useRouter()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -112,17 +117,19 @@ export function Navbar() {
             {/* Right side */}
             <div className="hidden lg:flex items-center gap-3">
               {/* Theme toggle */}
-              <button
-                onClick={toggleTheme}
-                className="p-2.5 text-muted-foreground hover:text-foreground hover:bg-white/5 rounded-lg transition-all duration-200 cursor-pointer"
-                aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5" strokeWidth={1.5} />
-                ) : (
-                  <Moon className="w-5 h-5" strokeWidth={1.5} />
-                )}
-              </button>
+              {mounted && (
+                <button
+                  onClick={toggleTheme}
+                  className="p-2.5 text-muted-foreground hover:text-foreground hover:bg-white/5 rounded-lg transition-all duration-200 cursor-pointer"
+                  aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                >
+                  {theme === "dark" ? (
+                    <Sun className="w-5 h-5" strokeWidth={1.5} />
+                  ) : (
+                    <Moon className="w-5 h-5" strokeWidth={1.5} />
+                  )}
+                </button>
+              )}
 
               {/* Language switcher */}
               <div className="flex items-center rounded-lg bg-white/5 border border-border overflow-hidden text-xs font-medium">
@@ -227,23 +234,25 @@ export function Navbar() {
               {/* Bottom actions */}
               <div className="px-6 pb-8 flex flex-col gap-3">
                 {/* Theme toggle */}
-                <button
-                  onClick={toggleTheme}
-                  className="w-full py-3 text-sm font-medium text-center border border-border rounded-lg text-muted-foreground hover:text-foreground hover:border-white/20 transition-colors cursor-pointer flex items-center justify-center gap-2"
-                  aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-                >
-                  {theme === "dark" ? (
-                    <>
-                      <Sun className="w-4 h-4" strokeWidth={1.5} />
-                      Light Mode
-                    </>
-                  ) : (
-                    <>
-                      <Moon className="w-4 h-4" strokeWidth={1.5} />
-                      Dark Mode
-                    </>
-                  )}
-                </button>
+                {mounted && (
+                  <button
+                    onClick={toggleTheme}
+                    className="w-full py-3 text-sm font-medium text-center border border-border rounded-lg text-muted-foreground hover:text-foreground hover:border-white/20 transition-colors cursor-pointer flex items-center justify-center gap-2"
+                    aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                  >
+                    {theme === "dark" ? (
+                      <>
+                        <Sun className="w-4 h-4" strokeWidth={1.5} />
+                        Light Mode
+                      </>
+                    ) : (
+                      <>
+                        <Moon className="w-4 h-4" strokeWidth={1.5} />
+                        Dark Mode
+                      </>
+                    )}
+                  </button>
+                )}
 
                 {/* Language */}
                 <div className="flex items-center gap-2">

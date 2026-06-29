@@ -12,6 +12,7 @@ export function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+  const titleParts = t.hero.title.split("Through Time")
 
   const handleScrollDown = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
@@ -72,7 +73,17 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          {t.hero.title}
+          {titleParts.length > 1 ? (
+            <>
+              {titleParts[0]}
+              <span className="text-[#d4af37] drop-shadow-[0_0_18px_rgba(212,175,55,0.35)]">
+                Through Time
+              </span>
+              {titleParts[1]}
+            </>
+          ) : (
+            t.hero.title
+          )}
         </motion.h1>
 
         {/* Subtitle */}

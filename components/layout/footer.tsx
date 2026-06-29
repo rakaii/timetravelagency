@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Clock, Twitter, Camera, Youtube, Linkedin } from "lucide-react"
+import { Clock, Share2, Rss, Send, Hash } from "lucide-react"
 import { useLocale } from "@/hooks/use-locale"
 
 export function Footer() {
@@ -48,10 +48,10 @@ export function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Camera, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Share2, href: "#", label: "X / Twitter" },
+    { icon: Hash, href: "#", label: "Instagram" },
+    { icon: Rss, href: "#", label: "YouTube" },
+    { icon: Send, href: "#", label: "LinkedIn" },
   ]
 
   return (

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { LocaleProvider } from "@/hooks/use-locale"
+import { Chatbot } from "@/components/ui/chatbot"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,7 +39,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} bg-background dark`}>
       <body className="font-sans antialiased">
-        <LocaleProvider>{children}</LocaleProvider>
+        <LocaleProvider>
+          {children}
+          <Chatbot />
+        </LocaleProvider>
       </body>
     </html>
   )
